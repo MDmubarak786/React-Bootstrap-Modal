@@ -40,7 +40,6 @@ function MyVerticallyCenteredModal(props) {
               <option>Sofa</option>
               <option>Chair</option>
               <option>Table</option>
-              <option>Large select</option>
             </Form.Control>
           </Form.Group>
 
